@@ -8,8 +8,6 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
-
-    <p> This is the todo page </p>
     
     <div id="app">
         <todo-form></todo-form>

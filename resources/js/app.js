@@ -7,7 +7,9 @@
 require('./bootstrap');
 
 window.Vue = require('vue').default;
+import { BootstrapVueIcons } from 'bootstrap-vue';
 import "tailwindcss/tailwind.css"
+Vue.use(BootstrapVueIcons);
 
 /**
  * The following block of code may be used to automatically register your
