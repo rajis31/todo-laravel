@@ -12,7 +12,7 @@
     <button @click="shareList">Share List</button>
     <button @click="deleteAll">Clear All</button>
   </div>
-    <todo-items :items="items"></todo-items>
+    <todo-items :items="items" @delete-item-child="deleteItemChild"></todo-items>
   </div>
 </template>
 
@@ -54,6 +54,10 @@ export default {
         const that = this;
         axios.post("/share", this.items)
         .then(res => that.shareLink= "/submission/"+res.data["submission_id"]);
+    },
+
+    deleteItemChild(id){
+        this.items = this.items.filter(items => items.id!==id);
     },
   },
   watch: {

@@ -9,6 +9,13 @@ use Illuminate\Support\Facades\DB;
 
 class TodoController extends Controller
 {
+    public function main(){
+        /*
+        *   Shows the main todo form 
+        */
+
+        return view("todo");
+    }
     public function share(Request $req){
         /*
         * Stores todo items in database and returns submission id

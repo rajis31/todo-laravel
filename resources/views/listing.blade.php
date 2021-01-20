@@ -5,10 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Submission</title>
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
 </head>
 <body>
 
-    {{ $items }}
-    
+    <!-- {{ $items }} -->
+    <div class="flex flex-col items-center">
+       
+    </div>    
+
 </body>
 </html>

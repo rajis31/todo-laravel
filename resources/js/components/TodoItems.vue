@@ -16,7 +16,7 @@ export default {
   },
   methods: {
       deleteItem(val){
-          console.log("Clicked delete button ",val);
+          this.$emit("delete-item-child",val);
       }
   },
   watch: {

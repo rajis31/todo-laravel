@@ -15,9 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\TodoController;
 
-Route::get('/', function () {
-    return view('todo');
-});
 
+Route::get("/",[TodoController::class,"main"]);
 Route::post("/share", [TodoController::class,"share"]);
 Route::get("/submission/{id}",[TodoController::class,"submission"]);

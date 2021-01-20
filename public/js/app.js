@@ -1906,6 +1906,11 @@ __webpack_require__.r(__webpack_exports__);
       axios.post("/share", this.items).then(function (res) {
         return that.shareLink = "/submission/" + res.data["submission_id"];
       });
+    },
+    deleteItemChild: function deleteItemChild(id) {
+      this.items = this.items.filter(function (items) {
+        return items.id !== id;
+      });
     }
   },
   watch: {
@@ -1945,7 +1950,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     deleteItem: function deleteItem(val) {
-      console.log("Clicked delete button ", val);
+      this.$emit("delete-item-child", val);
     }
   },
   watch: {
@@ -44002,7 +44007,10 @@ var render = function() {
         _c("button", { on: { click: _vm.deleteAll } }, [_vm._v("Clear All")])
       ]),
       _vm._v(" "),
-      _c("todo-items", { attrs: { items: _vm.items } })
+      _c("todo-items", {
+        attrs: { items: _vm.items },
+        on: { "delete-item-child": _vm.deleteItemChild }
+      })
     ],
     1
   )
