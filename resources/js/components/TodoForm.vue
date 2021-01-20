@@ -28,6 +28,7 @@ export default {
       items: [],
       id: 1,
       msg: "",
+      shareLink:"",
     };
   },
   methods: {
@@ -47,12 +48,19 @@ export default {
     deleteAll(){
         this.id=1;
         this.items=[];
+        this.msg="";
     },
     shareList(){
+        const that = this;
         axios.post("/share", this.items)
-        .then(res => console.log(res));
+        .then(res => that.shareLink= "/submission/"+res.data["submission_id"]);
     },
   },
+  watch: {
+    shareLink: function(){
+      console.log(this.shareLink);
+    }
+  }
 };
 </script>
 

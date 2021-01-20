@@ -20,3 +20,4 @@ Route::get('/', function () {
 });
 
 Route::post("/share", [TodoController::class,"share"]);
+Route::get("/submission/{id}",[TodoController::class,"submission"]);

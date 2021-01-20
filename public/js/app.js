@@ -1875,7 +1875,8 @@ __webpack_require__.r(__webpack_exports__);
       item: "",
       items: [],
       id: 1,
-      msg: ""
+      msg: "",
+      shareLink: ""
     };
   },
   methods: {
@@ -1898,11 +1899,18 @@ __webpack_require__.r(__webpack_exports__);
     deleteAll: function deleteAll() {
       this.id = 1;
       this.items = [];
+      this.msg = "";
     },
     shareList: function shareList() {
+      var that = this;
       axios.post("/share", this.items).then(function (res) {
-        return console.log(res);
+        return that.shareLink = "/submission/" + res.data["submission_id"];
       });
+    }
+  },
+  watch: {
+    shareLink: function shareLink() {
+      console.log(this.shareLink);
     }
   }
 });
