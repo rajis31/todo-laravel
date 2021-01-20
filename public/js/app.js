@@ -1859,6 +1859,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {
@@ -1875,7 +1880,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     addItem: function addItem() {
-      if (this.item.length >= 1) {
+      if (this.item.length >= 1 && this.items.length <= 10) {
         this.msg = "";
         this.items.push({
           id: this.id,
@@ -1883,8 +1888,21 @@ __webpack_require__.r(__webpack_exports__);
         });
         this.id += 1;
       } else {
-        this.msg = "You did not enter a item";
+        if (this.items.length > 10) {
+          this.msg = "Entered over 10 items.";
+        } else if (this.items.length === 0) {
+          this.msg = "Did not enter an item";
+        }
       }
+    },
+    deleteAll: function deleteAll() {
+      this.id = 1;
+      this.items = [];
+    },
+    shareList: function shareList() {
+      axios.post("/share", this.items).then(function (res) {
+        return console.log(res);
+      });
     }
   }
 });
@@ -43920,11 +43938,11 @@ var render = function() {
     "div",
     {
       staticClass:
-        "container border-2 border-gray-300 border-opacity-50 mx-auto w-96  h-96 shadow rounded"
+        "container border-2 border-gray-300 border-opacity-50 mx-auto w-96 h-96 shadow rounded"
     },
     [
       _c("h3", { staticClass: "text-4xl tracking-wider" }, [
-        _vm._v(" Todo App ")
+        _vm._v("Todo App")
       ]),
       _vm._v(" "),
       _c(
@@ -43960,7 +43978,7 @@ var render = function() {
             }
           }),
           _vm._v(" "),
-          _c("button", { attrs: { type: "submit" } }, [_vm._v(" Add ")]),
+          _c("button", { attrs: { type: "submit" } }, [_vm._v("Add")]),
           _vm._v(" "),
           _vm.msg.length > 0
             ? _c("p", { staticStyle: { color: "red" } }, [
@@ -43969,6 +43987,12 @@ var render = function() {
             : _vm._e()
         ]
       ),
+      _vm._v(" "),
+      _c("div", [
+        _c("button", { on: { click: _vm.shareList } }, [_vm._v("Share List")]),
+        _vm._v(" "),
+        _c("button", { on: { click: _vm.deleteAll } }, [_vm._v("Clear All")])
+      ]),
       _vm._v(" "),
       _c("todo-items", { attrs: { items: _vm.items } })
     ],
