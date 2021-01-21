@@ -1,9 +1,10 @@
 <template>
-  <ul v-if="items.length > 0">
+  <ul v-if="items.length > 0" class="my-4">
     <li v-for="item in items" :key="item.id"
-      class="flex flex-row w-full justify-around"
+      class="flex flex-row w-full justify-between border-gray-300 border-b align-center"
     >
-      {{ item.description }} <b-icon icon="x-circle-fill" v-on:click="deleteItem(item.id)"></b-icon>
+      <p class="ml-4">{{ item.description }}</p> 
+      <b-icon icon="x-circle-fill" class="mr-4" v-on:click="deleteItem(item.id)"></b-icon>
     </li>
   </ul>
 </template>
@@ -28,5 +29,8 @@ export default {
 <style scoped>
     svg:hover{
         fill:red;
+    }
+    svg{
+      margin-top: 2px;
     }
 </style>

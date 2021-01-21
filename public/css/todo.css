@@ -1,0 +1,42 @@
+/** Formatting Overlay ***/
+.overlay {
+    height: 100vh;
+    position: fixed;
+    width: 100vw;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0, 0.9);
+    overflow-x: hidden;
+    transition: 0.5s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    font-family: 'Open Sans', sans-serif;
+  }
+
+
+.overlay-images{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.overlay-images img {
+    height: 200px;
+    width: 200px;
+}
+.overlay .description p{
+    color: white;
+    text-align: center;
+    font-size: 4rem;
+}
+.overlay .description p:nth-child(2){
+    font-size: 2rem;
+}
+.overlay-info{
+    color: white;
+    font-size: 14px;
+}
