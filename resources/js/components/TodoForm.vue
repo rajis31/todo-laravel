@@ -1,6 +1,6 @@
 <template>
   <div
-    class="container mx-auto w-96 h-full text-center py-16 shadow rounded"
+    class="container mx-auto w-96 h-auto text-center pt-16 pb-4 shadow rounded"
   >
 
     <h3 class="text-4xl tracking-wider">Todo App</h3>
@@ -93,11 +93,8 @@ export default {
 
 <style scoped>
   .container{
-    --tw-border-opacity: 1;
-    border-left: 2px solid rgba(167, 243, 208, var(--tw-border-opacity));
-    border-right: 2px solid rgba(167, 243, 208, var(--tw-border-opacity));
-    border-bottom: 2px solid rgba(167, 243, 208, var(--tw-border-opacity));
-    border-top: 5px solid rgba(139, 92, 246, var(--tw-border-opacity));
+    border: #0074D9 2px solid;
+    background-color: white;
   }
   #add:hover{
     fill: lightgreen;

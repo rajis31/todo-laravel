@@ -1,4 +1,10 @@
-/** Formatting Overlay ***/
+/*** General Formats ***/
+body{
+    background-color: whitesmoke;
+}
+
+
+/*** Formatting Overlay ***/
 .overlay {
     height: 100vh;
     position: fixed;

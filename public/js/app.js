@@ -12472,7 +12472,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.container[data-v-076b72d6]{\n  --tw-border-opacity: 1;\n  border-left: 2px solid rgba(167, 243, 208, var(--tw-border-opacity));\n  border-right: 2px solid rgba(167, 243, 208, var(--tw-border-opacity));\n  border-bottom: 2px solid rgba(167, 243, 208, var(--tw-border-opacity));\n  border-top: 5px solid rgba(139, 92, 246, var(--tw-border-opacity));\n}\n#add[data-v-076b72d6]:hover{\n  fill: lightgreen;\n}\n#add[data-v-076b72d6]{\n  height: 20px;\n  width: 20px;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.container[data-v-076b72d6]{\n  border: #0074D9 2px solid;\n  background-color: white;\n}\n#add[data-v-076b72d6]:hover{\n  fill: lightgreen;\n}\n#add[data-v-076b72d6]{\n  height: 20px;\n  width: 20px;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -44044,7 +44044,7 @@ var render = function() {
     "div",
     {
       staticClass:
-        "container mx-auto w-96 h-full text-center py-16 shadow rounded"
+        "container mx-auto w-96 h-auto text-center pt-16 pb-4 shadow rounded"
     },
     [
       _c("h3", { staticClass: "text-4xl tracking-wider" }, [
@@ -44180,14 +44180,14 @@ var render = function() {
   return _vm.items.length > 0
     ? _c(
         "ul",
-        { staticClass: "my-4" },
+        { staticClass: "mt-4 border-t border-gray-300" },
         _vm._l(_vm.items, function(item) {
           return _c(
             "li",
             {
               key: item.id,
               staticClass:
-                "flex flex-row w-full justify-between border-gray-300 border-b align-center"
+                "flex flex-row w-full justify-between align-center py-2 border-gray-300 border-b"
             },
             [
               _c("p", { staticClass: "ml-4" }, [

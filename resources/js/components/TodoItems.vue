@@ -1,7 +1,7 @@
 <template>
-  <ul v-if="items.length > 0" class="my-4">
+  <ul v-if="items.length > 0" class="mt-4 border-t border-gray-300">
     <li v-for="item in items" :key="item.id"
-      class="flex flex-row w-full justify-between border-gray-300 border-b align-center"
+      class="flex flex-row w-full justify-between align-center py-2 border-gray-300 border-b"
     >
       <p class="ml-4">{{ item.description }}</p> 
       <b-icon icon="x-circle-fill" class="mr-4" v-on:click="deleteItem(item.id)"></b-icon>
